@@ -1,69 +1,67 @@
-# React + TypeScript + Vite
+# Spreadsheet Assignment – Intern Design Challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive, editable spreadsheet-style web app built to match the Figma design, using React, TypeScript, Tailwind CSS, and Vite.
 
-Currently, two official plugins are available:
+Live Demo: https://assignment-inky-omega.vercel.app/ 
+Figma Design: https://www.figma.com/design/3nywpu5sz45RrCmwe68QZP/Intern-Design-Assigment?node-id=2-2535
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+# Features
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Excel-like interface with keyboard navigation (Arrow keys, Enter, Tab)
+- Conditional styling for **Status** and **Priority** cells
+- Sticky headers & scrollable body
+- Mock data rendering via `Details` array
+- Placeholder **Add Column** functionality
+- Tailwind styling aligned with Figma
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+# Tech Stack
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- React + TypeScript
+- Vite
+- Tailwind CSS (no custom CSS)
+- Mock data for demo purposes
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+# Project Structure
+src/
+├── assets/ # Icon components
+├── components/ # Table.tsx (main spreadsheet)
+├── mockdata/ # MockData.ts
+├── App.tsx # Root app component
+└── main.tsx # Vite entry point
+
+# Known Issues
+- bg-clip-text removed—no gradient text feedback
+
+- “Add Column” button is static
+
+- No data persistence or API integration
+
+# Setup & Run
+- Clone the repo
+
+* bash
+- Copy
+- Edit
+- git clone https://github.com/bnikita11/Assignment.git
+- cd Assignment
+- Install dependencies
+
+* bash
+- Copy
+- Edit
+- npm install
+- Run development server
+
+* bash
+- Copy
+- Edit
+- npm run dev
+- Open in browser at http://localhost:5173
+
+# Author
+Nikita Baniya – React Developer Intern
+GitHub: bnikita11
