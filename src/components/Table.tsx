@@ -52,6 +52,11 @@ function Table() {
       inputRefs.current[row + 1][col]?.focus();
       setSelectedCell({ row: row + 1, col });
     }
+    if (e.key === "Enter" && row < rows - 1) {
+      e.preventDefault();
+      inputRefs.current[row + 1][col]?.focus();
+      setSelectedCell({ row: row + 1, col });
+    }
 
     if (e.key === "ArrowUp" && row > 0) {
       e.preventDefault();
