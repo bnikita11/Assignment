@@ -82,13 +82,13 @@ function Table() {
   const getStatusStyle = (status: string) => {
     switch (status.toLowerCase()) {
       case "in-process":
-        return " text-yellow-800 bg-yellow-200 ";
+        return "rounded text-yellow-800 bg-yellow-200  ";
       case "need to start":
-        return " text-blue-800 bg-blue-200";
+        return "rounded text-blue-800 bg-blue-200";
       case "complete":
-        return " text-green-800 bg-green-200";
+        return "rounded text-green-800 bg-green-200";
       case "blocked":
-        return " text-red-800 bg-red-200";
+        return "rounded text-red-800 bg-red-200";
       default:
         return "";
     }
@@ -234,26 +234,32 @@ function Table() {
                         setSelectedCell({ row: rowIndex, col: colIndex });
                       }}
                     >
-                      <input
-                        type="text"
-                        defaultValue={detail ? String(detail[key]) : ""}
-                        className={`w-full outline-none bg-transparent pl-4 bg-clip-text ${
+                      <span
+                        className={`w-full flex items-center px-2 py-1 ${
                           key === "status"
-                            ? `${getStatusStyle(detail?.status || "")}`
+                            ? getStatusStyle(detail?.status || "")
                             : ""
                         } ${
                           key === "priority"
                             ? getPriorityStyle(detail?.priority || "")
                             : ""
                         }`}
-                        ref={(el) =>
-                          (inputRefs.current[rowIndex][colIndex] = el!)
-                        }
-                        onKeyDown={(e) => handleKeyDown(e, rowIndex, colIndex)}
-                        onFocus={() =>
-                          setSelectedCell({ row: rowIndex, col: colIndex })
-                        }
-                      />
+                      >
+                        <input
+                          type="text"
+                          defaultValue={detail ? String(detail[key]) : ""}
+                          className="w-full bg-transparent outline-none"
+                          ref={(el) =>
+                            (inputRefs.current[rowIndex][colIndex] = el!)
+                          }
+                          onKeyDown={(e) =>
+                            handleKeyDown(e, rowIndex, colIndex)
+                          }
+                          onFocus={() =>
+                            setSelectedCell({ row: rowIndex, col: colIndex })
+                          }
+                        />
+                      </span>
                     </td>
                   );
                 })}
