@@ -39,6 +39,10 @@ src/
 - “Add Column” button is static
 
 - No data persistence or API integration
+# Trade-offs & Notes
+
+- `bg-clip-text` was considered for status coloring, but due to Tailwind's limitations and text visibility issues, I opted for solid backgrounds for clarity.
+- Column resizing and hiding were skipped due to time constraints.
 
 # Setup & Run
 - Clone the repo
